@@ -25,3 +25,5 @@ end
 set -gx EDITOR nvim
 
 starship init fish | source
+
+fish_add_path /home/hvmegy/.spicetify
