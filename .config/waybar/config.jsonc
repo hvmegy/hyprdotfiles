@@ -14,7 +14,7 @@
 
 		"modules-left": ["custom/powermenu", "custom/separator", "hyprland/workspaces"],
 		"modules-center": ["custom/whatsong", "clock"],
-		"modules-right": [ "memory", "battery", "pulseaudio", "custom/notification", "tray" ],
+		"modules-right": [ "memory", "battery", "network", "pulseaudio", "custom/notification", "tray" ],
 		// Modules configuration
 		"hyprland/workspaces": {
 			"on-click": "activate",
@@ -105,13 +105,15 @@
 		"network": {
 			// "interface": "wlp2*", // (Optional) To force the use of this interface
 			"interval":1,
-			"format-wifi": "{bandwidthTotalBytes:>3}  ", //({essid} {signalStrength}%)
+			"format-wifi": "{bandwidthTotalBytes:>3} 󰖩", //({essid} {signalStrength}%)
 			"format-ethernet": "{ipaddr}/{cidr} ",
 			"tooltip-format-wifi": "{ipaddr} ({signalStrength}%) ",
 			"tooltip-format": "{ifname} via {gwaddr} ",
 			"format-linked": "{ifname} (No IP) ",
-			"format-disconnected": "󰀦", //Disconnected ⚠
-			"format-alt": "{ifname}: {ipaddr}/{cidr}"
+			"format-disabled": "󱚼", 
+			"format-disconnected": "⚠", //Disconnected ⚠
+			// "format-alt": "{ifname}: {ipaddr}/{cidr}",
+			"on-click": "~/.config/script/wofi-wifi-menu.sh"
 		},
 
 		"pulseaudio": {
