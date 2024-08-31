@@ -4,9 +4,11 @@ op=$( echo -e " Poweroff\n Reboot\n Lock\n Logout" | wofi -i --dmenu
 
 case $op in 
         poweroff)
-                ;&
+                poweroff
+		;;
         reboot)
-		;&
+		reboot
+		;;
         lock)
 		hyprlock 
                 ;;

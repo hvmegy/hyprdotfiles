@@ -13,7 +13,7 @@
 		// Choose the order of the modules
 
 		"modules-left": ["custom/powermenu", "custom/separator", "hyprland/workspaces"],
-		"modules-center": ["clock"],
+		"modules-center": ["custom/whatsong", "clock"],
 		"modules-right": [ "memory", "battery", "pulseaudio", "custom/notification", "tray" ],
 		// Modules configuration
 		"hyprland/workspaces": {
@@ -271,8 +271,15 @@
 		},
 		"custom/powermenu": { 
 			"format": "{icon}",
-			"format-icons": "  ",// 
+			"format-icons": "  ",// 
 			"exec-on-event": "true",
 			"on-click": "~/.config/script/wofi-powermenu.sh",
+		}, 
+		"custom/whatsong": { 
+			"interval": 1, 
+			"format": "{} |", 
+			"exec": "~/.config/script/whatsong.sh", 
+			"on-click": "playerctl play-pause", 
+			"on-click-right": "playerctl next", 
 		}, 
 }
