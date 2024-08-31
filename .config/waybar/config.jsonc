@@ -12,9 +12,9 @@
 
 		// Choose the order of the modules
 
-		"modules-left": ["custom/power", "custom/separator", "hyprland/workspaces", "river/tags"],
+		"modules-left": ["custom/powermenu", "custom/separator", "hyprland/workspaces"],
 		"modules-center": ["clock"],
-		"modules-right": [ "memory", "wireplumber","tray" ],
+		"modules-right": [ "memory", "battery", "pulseaudio", "custom/notification", "tray" ],
 		// Modules configuration
 		"hyprland/workspaces": {
 			"on-click": "activate",
@@ -26,9 +26,9 @@
 				"2": "",
 				"3": "",
 				"4": "",
-				"5": "",
-				"6": "",
-				"7": "󰠮",
+				"5": "",
+				"6": "",
+				"7": "",
 				"8": "",
 				"9": "",
 				"10": ""
@@ -63,9 +63,9 @@
 
 		"clock": {
 			"interval": 1,
-			"format": "{:%d-%m-%Y %H:%M:%S %p}", // %b %d %Y  --Date formatting
+			"format": "{:%d-%m-%Y %H:%M:%S}", // %b %d %Y  --Date formatting
 			"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-			"format-alt": "{:%Y-%m-%d %H:%M:%S  }"
+			// "format-alt": "{:%Y-%m-%d %H:%M:%S  }"
 		},
 
 		"temperature": {
@@ -269,4 +269,10 @@
 				"deactivated": ""
 			}
 		},
+		"custom/powermenu": { 
+			"format": "{icon}",
+			"format-icons": "  ",// 
+			"exec-on-event": "true",
+			"on-click": "~/.config/script/wofi-powermenu.sh",
+		}, 
 }
