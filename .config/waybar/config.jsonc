@@ -13,8 +13,8 @@
 		// Choose the order of the modules
 
 		"modules-left": ["custom/powermenu", "custom/separator", "hyprland/workspaces"],
-		"modules-center": ["custom/whatsong", "clock"],
-		"modules-right": [ "memory", "battery", "network", "pulseaudio", "custom/notification", "tray" ],
+		"modules-center": ["custom/whatsong"],
+		"modules-right": [ "memory", "battery", "network", "pulseaudio", "custom/notification", "tray", "clock"],
 		// Modules configuration
 		"hyprland/workspaces": {
 			"on-click": "activate",
@@ -54,6 +54,15 @@
 			""
 			],
 		},
+
+		"bluetooth": { 
+			"format": "{icon} blue",
+			"format-icons": {
+				"enabled": "",
+				"disabled": "disable"
+			},
+			"on-click": "~/.config/script/wofi-bluetooth.sh"
+		}, 
 
 		"tray": {
 			"icon-size": 18,
@@ -279,7 +288,7 @@
 		}, 
 		"custom/whatsong": { 
 			"interval": 1, 
-			"format": "{} |", 
+			"format": "{}", 
 			"exec": "~/.config/script/whatsong.sh", 
 			"on-click": "playerctl play-pause", 
 			"on-click-right": "playerctl next", 
