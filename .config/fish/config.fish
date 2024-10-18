@@ -27,3 +27,7 @@ set -gx EDITOR nvim
 starship init fish | source
 
 fish_add_path /home/hvmegy/.spicetify
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
